@@ -6,7 +6,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.kafka.annotation.EnableKafka;
 
-import java.time.LocalDate;
 
 @SpringBootApplication
 @EnableKafka
@@ -21,6 +20,7 @@ public class SenderApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         sender.send("topicA", "Hello World");
+        sender.send("topicA2", "Hello World!");
         System.out.println("Message has been sent");
     }
 }
